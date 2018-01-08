@@ -1,0 +1,14 @@
+<textarea [rows]="12" style="width:100%" pInputTextarea [(ngModel)]="xquery" placeholder="enter XQuery here..."></textarea>
+
+<div class="ui-g ui-fluid">
+    <div class="ui-g-10">
+    </div>
+    <div class="ui-g-1">
+        <button type="button" (click)="ok()" pButton label="OK"></button>
+    </div>
+    <div class="ui-g-1">
+        <button type="button" (click)="clear()" pButton label="Clear"></button>
+    </div>
+</div>
+
+<textarea [rows]="12" style="width:100%" pInputTextarea [(ngModel)]="materialisedView" readonly></textarea>

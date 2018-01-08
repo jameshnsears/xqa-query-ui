@@ -1,7 +1,5 @@
-__pycache__/
-coverage/
-.cache/
-.coverage
-.idea/
-.pydevproject
-.vscode/
+node_modules
+dist
+.~lock.*.pptx#
+~$design.pptx
+coverage

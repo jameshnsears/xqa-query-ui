@@ -1,33 +1,37 @@
 sudo: required
 
-notifications:
-email: james.hn.sears@gmail.com
+language: node_js
 
-services:
-  - docker
+node_js:
+  - "8"
 
-language: python
+addons:
+apt:
+  sources:
+    - google-chrome
+  packages:
+    - google-chrome-stable
 
-python:
-  - "3.5"
-  - "3.6"
+branches:
+  only:
+  - master
 
-before_install:
-  - docker volume create xqa-message-broker
-  - docker pull jameshnsears/xqa-message-broker
-  - docker run -d --net="host" --name="xqa-message-broker" -p 127.0.0.1:5672:5672 jameshnsears/xqa-message-broker
-  - sleep 10
-  - docker logs xqa-message-broker
+cache:
+  directories:
+    - "node_modules"
 
-  - sudo apt-get remove cmake
-  - sudo apt-get install -y gcc cmake-curses-gui uuid-dev libssl-dev libsasl2-2 libsasl2-dev swig python-dev python3-dev ruby-dev libperl-dev
-
-  - pwd
-  - pip install -r requirements.txt
+before_script:
+  - export CHROME_BIN=chromium-browser
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
 
 script:
-  - export PYTHONPATH=/home/travis/build/jameshnsears/xqa-query-ui/src:$PYTHONPATH
-  - pytest --flake8 --cov-report term-missing --cov=. test
-  - codecov --token=f055eb15-dd20-42e2-bd42-36f114521c72
-  - COVERALLS_REPO_TOKEN=KzTeUpbMJTlXbWoeMse0s703D21BEgDmD coveralls
+  - npm install -g @angular/cli
+  - npm install
+  - ng lint
+  - ng test --code-coverage --watch false
+  - ng e2e
 
+  - ng build --prod --build-optimizer
+
+after_script: "npm install coveralls && cat ./coverage/lcov.info | coveralls"

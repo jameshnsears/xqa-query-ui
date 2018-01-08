@@ -3,16 +3,9 @@
 	<name>xqa-query-ui</name>
 	<comment></comment>
 	<projects>
-		<project>xqa-commons</project>
 	</projects>
 	<buildSpec>
-		<buildCommand>
-			<name>org.python.pydev.PyDevBuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
 	</buildSpec>
 	<natures>
-		<nature>org.python.pydev.pythonNature</nature>
 	</natures>
 </projectDescription>

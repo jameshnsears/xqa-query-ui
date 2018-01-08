@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  xqa-query-ui:
+    build: .
+    image: "xqa-query-ui"
+    ports:
+      - "80:80"
+    networks:
+      - xqa
+
+networks:
+  xqa:

@@ -1,0 +1,30 @@
+{
+    "data": [
+        {
+            "data": {
+                "service": "xqa-ingest-balancer-UUID-1",
+                "items": "40",
+                "lastItemItemstamp": "20180109140201",
+                "pingable": "Y"
+            },
+            "children": [
+                {
+                    "data": {
+                        "service": "xqa-shard-UUID-1",
+                        "items": "21",
+                        "lastItemItemstamp": "20180109140202",
+                        "pingable": "Y"
+                    }
+                },
+                {
+                    "data": {
+                        "service": "xqa-shard-UUID-2",
+                        "items": "19",
+                        "lastItemItemstamp": "20180109140203",
+                        "pingable": "N"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,1 +1,0 @@
-/book/bookInfo/PSMID
