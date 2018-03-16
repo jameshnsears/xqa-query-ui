@@ -26,8 +26,11 @@ before_script:
   - sh -e /etc/init.d/xvfb start
 
 script:
+  - npm i -g npm
   - npm install -g @angular/cli
   - npm install
+  - node_modules/protractor/bin/webdriver-manager update --versions.chrome 2.36
+
   - ng lint
   - ng test --code-coverage --watch false
   - ng e2e
