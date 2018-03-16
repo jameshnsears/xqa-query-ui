@@ -15,7 +15,7 @@ or
 
 then
 
-* visit: 
+* visit: [http://127.0.0.1/](http://127.0.0.1/)
 
 ### 1.3. Teardown
 * docker-compose -p "dev" down -v
