@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SelectItem } from 'primeng/primeng';
 
+import { RadioButtonModule } from 'primeng/radiobutton';
+
 import { Car } from '../domain/car';
 import { CarService } from '../service/car.service';
 
@@ -11,6 +13,8 @@ import { CarService } from '../service/car.service';
 })
 export class SearchComponent implements OnInit {
   types: SelectItem[];
+
+  val1: string;
 
   selectedType: string;
 

@@ -1,8 +1,7 @@
 export interface Car {
-    vin?;
-    year?;
-    brand?;
-    color?;
-    price?;
-    saleDate?;
+    creationTime?;
+    service?;
+    brsubjectand?;
+    correlationId?;
+    digest?;
 }

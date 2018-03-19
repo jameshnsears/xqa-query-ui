@@ -10,6 +10,8 @@ import { ChartModule } from 'primeng/primeng';
 import { CalendarModule } from 'primeng/primeng';
 import { ButtonModule } from 'primeng/primeng';
 import { SelectButtonModule } from 'primeng/primeng';
+import { RadioButtonModule } from 'primeng/radiobutton';
+
 import { DataTableModule } from 'primeng/primeng';
 import { InputTextareaModule } from 'primeng/primeng';
 import { TreeTableModule } from 'primeng/primeng';
@@ -39,6 +41,7 @@ import { NodeService } from './service/node.service';
     CalendarModule,
     ButtonModule,
     SelectButtonModule,
+    RadioButtonModule,
     DataTableModule,
     HttpClientModule,
     InputTextareaModule,

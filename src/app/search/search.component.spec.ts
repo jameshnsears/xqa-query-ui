@@ -7,6 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { TabViewModule } from 'primeng/primeng';
 import { ButtonModule } from 'primeng/primeng';
 import { SelectButtonModule } from 'primeng/primeng';
+
+import { RadioButtonModule } from 'primeng/radiobutton';
 import { DataTableModule } from 'primeng/primeng';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -24,6 +26,7 @@ describe('SearchComponent', () => {
         FormsModule,
         TabViewModule,
         ButtonModule,
+        RadioButtonModule,
         SelectButtonModule,
         DataTableModule,
         HttpClientModule

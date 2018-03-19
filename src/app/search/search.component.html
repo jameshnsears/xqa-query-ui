@@ -1,3 +1,15 @@
+<div class="content-section implementation">
+  <h3 class="first">Basic</h3>
+  <div class="ui-g" style="width:250px;margin-bottom:10px">
+      <div class="ui-g-12"><p-radioButton name="group1" value="creationTime" label="creationTime" [(ngModel)]="val1" inputId="opt1"></p-radioButton></div>
+      <div class="ui-g-12"><p-radioButton name="group1" value="service" label="service" [(ngModel)]="val1" inputId="opt2"></p-radioButton></div>
+      <div class="ui-g-12"><p-radioButton name="group1" value="subject" label="subject" [(ngModel)]="val1" inputId="opt3"></p-radioButton></div>
+      <div class="ui-g-12"><p-radioButton name="group1" value="correlationId" label="correlationId" [(ngModel)]="val1" inputId="opt4"></p-radioButton></div>
+      <div class="ui-g-12"><p-radioButton name="group1" value="digest" label="digest" [(ngModel)]="val1" inputId="opt5"></p-radioButton></div>
+  </div>
+  Selected Value = {{val1||'none'}}
+</div>
+
 <div class="ui-g ui-fluid">
 
   <div class="ui-g-2">
@@ -25,10 +37,13 @@
 
 </div>
 
+
+
+
 <p-dataTable [value]="cars1" scrollable="true" scrollHeight="440px">
-  <p-column field="time" header="Time"></p-column>
-  <p-column field="service" header="Service"></p-column>
-  <p-column field="subject" header="Subject"></p-column>
-  <p-column field="correlationId" header="CorrelationId"></p-column>
-  <p-column field="sha256" header="sha256"></p-column>
+  <p-column field="creationTime" header="creationTime"></p-column>
+  <p-column field="service" header="service"></p-column>
+  <p-column field="subject" header="subject"></p-column>
+  <p-column field="correlationId" header="correlationId"></p-column>
+  <p-column field="digest" header="digest"></p-column>
 </p-dataTable>
