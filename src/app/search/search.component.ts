@@ -20,10 +20,10 @@ export class SearchComponent implements OnInit {
 
   constructor(private carService: CarService) {
     this.types = [];
-    this.types.push({ label: 'Service', value: 'Service' });
-    this.types.push({ label: 'Subject', value: 'Subject' });
-    this.types.push({ label: 'CorrelationId', value: 'CorrelationId' });
-    this.types.push({ label: 'sha256', value: 'sha256' });
+    this.types.push({ label: 'service', value: 'service' });
+    this.types.push({ label: 'subject', value: 'subject' });
+    this.types.push({ label: 'correlationId', value: 'correlationId' });
+    this.types.push({ label: 'digest', value: 'digest' });
   }
 
   clear() {
