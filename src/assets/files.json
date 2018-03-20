@@ -4,7 +4,7 @@
             "data": {
                 "service": "ingest/02bd02c2",
                 "items": "40",
-                "lastItemItemstamp": "1521222742357",
+                "lastItemItemstamp": "2018-03-16 17:52:23.247860",
                 "pingable": ""
             },
             "children": [
@@ -12,7 +12,7 @@
                     "data": {
                         "service": "ingestbalancer/6336fca0",
                         "items": "40",
-                        "lastItemItemstamp": "1521222742972",
+                        "lastItemItemstamp": "2018-03-16 17:57:19.023025",
                         "pingable": "Y"
                     }
                 },
@@ -20,7 +20,7 @@
                     "data": {
                         "service": "shard/ee251962",
                         "items": "40",
-                        "lastItemItemstamp": "1521222750752",
+                        "lastItemItemstamp": "2018-03-16 17:57:19.028748",
                         "pingable": "Y"
                     }
                 }
