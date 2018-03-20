@@ -12,6 +12,8 @@ import { ButtonModule } from 'primeng/primeng';
 import { SelectButtonModule } from 'primeng/primeng';
 import { RadioButtonModule } from 'primeng/radiobutton';
 
+import {TableModule} from 'primeng/table';
+
 import { DataTableModule } from 'primeng/primeng';
 import { InputTextareaModule } from 'primeng/primeng';
 import { TreeTableModule } from 'primeng/primeng';
@@ -43,6 +45,7 @@ import { NodeService } from './service/node.service';
     SelectButtonModule,
     RadioButtonModule,
     DataTableModule,
+    TableModule,
     HttpClientModule,
     InputTextareaModule,
     TreeTableModule

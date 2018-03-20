@@ -31,5 +31,6 @@ then
 * docker-compose -p "dev" down -v
 
 ## 3. Run from CLI
+* npm install
 * ng build
 * ng serve --open

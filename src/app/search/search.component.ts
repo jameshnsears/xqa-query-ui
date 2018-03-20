@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { SelectItem } from 'primeng/primeng';
 
 import { RadioButtonModule } from 'primeng/radiobutton';
+
+
+import {TableModule} from 'primeng/table';
+
 
 import { Car } from '../domain/car';
 import { CarService } from '../service/car.service';
@@ -12,7 +15,6 @@ import { CarService } from '../service/car.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  types: SelectItem[];
 
   val1: string;
 
@@ -20,14 +22,9 @@ export class SearchComponent implements OnInit {
 
   edited: string;
 
-  cars1: Car[];
+  cars: Car[];
 
   constructor(private carService: CarService) {
-    this.types = [];
-    this.types.push({ label: 'service', value: 'service' });
-    this.types.push({ label: 'subject', value: 'subject' });
-    this.types.push({ label: 'correlationId', value: 'correlationId' });
-    this.types.push({ label: 'digest', value: 'digest' });
   }
 
   clear() {
@@ -39,7 +36,7 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.carService.getCarsMedium().then(cars => this.cars1 = cars);
+    this.carService.getCarsMedium().then(cars => this.cars = cars);
   }
 
 }

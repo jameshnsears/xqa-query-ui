@@ -2,26 +2,26 @@
     "data": [
         {
             "data": {
-                "service": "xqa-ingest-balancer-UUID-1",
+                "service": "ingest/02bd02c2",
                 "items": "40",
-                "lastItemItemstamp": "20180109140201",
-                "pingable": "Y"
+                "lastItemItemstamp": "1521222742357",
+                "pingable": ""
             },
             "children": [
                 {
                     "data": {
-                        "service": "xqa-shard-UUID-1",
-                        "items": "21",
-                        "lastItemItemstamp": "20180109140202",
+                        "service": "ingestbalancer/6336fca0",
+                        "items": "40",
+                        "lastItemItemstamp": "1521222742972",
                         "pingable": "Y"
                     }
                 },
                 {
                     "data": {
-                        "service": "xqa-shard-UUID-2",
-                        "items": "19",
-                        "lastItemItemstamp": "20180109140203",
-                        "pingable": "N"
+                        "service": "shard/ee251962",
+                        "items": "40",
+                        "lastItemItemstamp": "1521222750752",
+                        "pingable": "Y"
                     }
                 }
             ]
