@@ -10,5 +10,5 @@ import { TabViewModule } from 'primeng/primeng';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'XQA Query UI';
+  title = 'XQA';
 }

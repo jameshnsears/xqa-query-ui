@@ -4,7 +4,9 @@ import { XqueryComponent } from './xquery.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+
 import { TabViewModule } from 'primeng/primeng';
+import { InputTextModule } from 'primeng/primeng';
 import { ButtonModule } from 'primeng/primeng';
 
 describe('XqueryComponent', () => {
@@ -18,6 +20,7 @@ describe('XqueryComponent', () => {
         BrowserAnimationsModule,
         FormsModule,
         TabViewModule,
+        InputTextModule,
         ButtonModule
       ],
     })

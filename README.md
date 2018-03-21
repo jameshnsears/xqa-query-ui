@@ -9,7 +9,6 @@
 * npm install primeng --save
 * npm install @angular/animations --save
 * npm install font-awesome --save
-* npm install chart.js --save
 
 ## 2. Docker
 ### 2.1. Build locally

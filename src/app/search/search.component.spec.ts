@@ -4,12 +4,12 @@ import { SearchComponent } from './search.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-import { TabViewModule } from 'primeng/primeng';
-import { ButtonModule } from 'primeng/primeng';
-import { SelectButtonModule } from 'primeng/primeng';
 
-import { RadioButtonModule } from 'primeng/radiobutton';
-import { DataTableModule } from 'primeng/primeng';
+import { TabViewModule } from 'primeng/primeng';
+import { InputTextModule } from 'primeng/primeng';
+import { ButtonModule } from 'primeng/primeng';
+import { TableModule } from 'primeng/table';
+
 import { HttpClientModule } from '@angular/common/http';
 
 import { CarService } from '../service/car.service';
@@ -25,10 +25,9 @@ describe('SearchComponent', () => {
         BrowserAnimationsModule,
         FormsModule,
         TabViewModule,
+        InputTextModule,
         ButtonModule,
-        RadioButtonModule,
-        SelectButtonModule,
-        DataTableModule,
+        TableModule,
         HttpClientModule
       ],
       providers: [CarService]

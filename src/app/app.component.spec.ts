@@ -15,10 +15,10 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
-  it(`should have as title 'XQA Query UI'`, async(() => {
+  it(`should have as title 'XQA'`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('XQA Query UI');
+    expect(app.title).toEqual('XQA');
   }));
   it('should render p-tabView', async(() => {
     const fixture = TestBed.createComponent(AppComponent);

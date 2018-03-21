@@ -1,11 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { RadioButtonModule } from 'primeng/radiobutton';
-
-
-import {TableModule} from 'primeng/table';
-
-
 import { Car } from '../domain/car';
 import { CarService } from '../service/car.service';
 
@@ -15,24 +9,14 @@ import { CarService } from '../service/car.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-
-  val1: string;
-
-  selectedType: string;
-
-  edited: string;
+  searchValue: string;
 
   cars: Car[];
 
   constructor(private carService: CarService) {
   }
 
-  clear() {
-    this.selectedType = '';
-    this.edited = '';
-  }
-
-  ok() {
+  search() {
   }
 
   ngOnInit() {

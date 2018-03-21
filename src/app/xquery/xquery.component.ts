@@ -20,7 +20,7 @@ export class XqueryComponent implements OnInit {
     this.materialisedView = '';
   }
 
-  ok() {
+  run() {
     this.materialisedView = '<some xquery response/>';
   }
 
