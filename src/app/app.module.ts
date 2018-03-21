@@ -33,7 +33,6 @@ import { NodeService } from './service/node.service';
     BrowserAnimationsModule,
     FormsModule,
     TabViewModule,
-    GrowlModule,
     ButtonModule,
     TableModule,
     HttpClientModule,
