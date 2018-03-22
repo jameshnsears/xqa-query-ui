@@ -12,7 +12,7 @@ import { TableModule } from 'primeng/table';
 
 import { HttpClientModule } from '@angular/common/http';
 
-import { CarService } from '../service/car.service';
+import { SearchService } from '../service/search.service';
 
 describe('SearchComponent', () => {
   let component: SearchComponent;
@@ -30,7 +30,7 @@ describe('SearchComponent', () => {
         TableModule,
         HttpClientModule
       ],
-      providers: [CarService]
+      providers: [SearchService]
     })
       .compileComponents();
   }));

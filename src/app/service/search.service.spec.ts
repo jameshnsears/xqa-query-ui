@@ -1,18 +1,18 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { CarService } from './car.service';
+import { SearchService } from './search.service';
 
 import { HttpClientModule } from '@angular/common/http';
 
-describe('CarService', () => {
+describe('SearchService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule],
-      providers: [CarService]
+      providers: [SearchService]
     });
   });
 
-  it('should be created', inject([CarService], (service: CarService) => {
+  it('should be created', inject([SearchService], (service: SearchService) => {
     expect(service).toBeTruthy();
   }));
 });

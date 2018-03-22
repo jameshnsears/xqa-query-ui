@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { SearchResponse } from '../domain/search.response';
-import { CarService } from '../service/car.service';
+import { SearchService } from '../service/search.service';
 
 @Component({
   selector: 'app-search',
@@ -11,16 +11,16 @@ import { CarService } from '../service/car.service';
 export class SearchComponent implements OnInit {
   searchValue: string;
 
-  cars: SearchResponse[];
+  searchResponses: SearchResponse[];
 
-  constructor(private carService: CarService) {
+  constructor(private searchService: SearchService) {
   }
 
   search() {
   }
 
   ngOnInit() {
-    this.carService.getCarsMedium().then(cars => this.cars = cars);
+    this.searchService.getSearchResponse().then(searchResponses => this.searchResponses = searchResponses);
   }
 
 }

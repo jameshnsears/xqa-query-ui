@@ -17,7 +17,7 @@ import { XqueryComponent } from './xquery/xquery.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
-import { CarService } from './service/car.service';
+import { SearchService } from './service/search.service';
 import { NodeService } from './service/node.service';
 
 
@@ -41,7 +41,7 @@ import { NodeService } from './service/node.service';
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
-    CarService,
+    SearchService,
     NodeService],
   bootstrap: [AppComponent]
 })

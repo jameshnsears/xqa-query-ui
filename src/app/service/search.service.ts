@@ -6,12 +6,12 @@ import { Injectable } from '@angular/core';
 import { SearchResponse } from '../domain/search.response';
 
 @Injectable()
-export class CarService {
+export class SearchService {
 
   constructor(private http: HttpClient) { }
 
-  getCarsMedium() {
-    return this.http.get<any>('assets/cars-medium.json')
+  getSearchResponse() {
+    return this.http.get<any>('assets/search.response.json')
       .toPromise()
       .then(res => <SearchResponse[]>res.data)
       .then(data => data);
