@@ -13,7 +13,7 @@ export class SearchService {
   constructor(private http: HttpClient) { }
 
   doSearch(searchValue: string): Observable<SearchResponse[]> {
-    return this.http.get<SearchResponse[]>('assets/search.response.json2',
+    return this.http.get<SearchResponse[]>('assets/search.response.json',
       { params: new HttpParams().set('searchValue', searchValue) })
     .pipe(
       retry(3),

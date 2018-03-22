@@ -28,6 +28,8 @@ export class SearchComponent implements OnInit {
         searchResponses => this.searchResponses = searchResponses,
         error => this.error = error
       );
+
+      console.log(this.searchResponses);
     }
   }
 
