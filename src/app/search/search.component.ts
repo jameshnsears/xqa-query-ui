@@ -19,15 +19,18 @@ export class SearchComponent implements OnInit {
   }
 
   search() {
-    this.searchService.getConfig(this.searchValue)
-    .then(
-      searchResponses => this.searchResponses = searchResponses,
-      error => this.error = error
-    );
+    if (this.searchValue === '') {
+      this.error = 'no search term entered';
+      this.searchResponses = [];
+    } else {
+      this.searchService.doSearch(this.searchValue)
+      .subscribe(
+        searchResponses => this.searchResponses = searchResponses,
+        error => this.error = error
+      );
+    }
   }
 
   ngOnInit() {
-    //this.searchService.getSearchResponse(this.searchValue).then(searchResponses => this.searchResponses = searchResponses);
   }
-
 }

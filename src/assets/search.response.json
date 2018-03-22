@@ -1,5 +1,4 @@
-{
-    "data": [
+[
         {
             "creationTime": "2018-03-16 17:52:23.259682",
             "service": "ingest/02bd02c2",
@@ -19,4 +18,3 @@
             "digest": "aa84010b"
         }
     ]
-}
