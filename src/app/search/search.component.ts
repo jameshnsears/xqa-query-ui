@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Car } from '../domain/car';
+import { SearchResponse } from '../domain/search.response';
 import { CarService } from '../service/car.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { CarService } from '../service/car.service';
 export class SearchComponent implements OnInit {
   searchValue: string;
 
-  cars: Car[];
+  cars: SearchResponse[];
 
   constructor(private carService: CarService) {
   }

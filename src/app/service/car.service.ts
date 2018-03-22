@@ -3,7 +3,7 @@ import 'rxjs/add/operator/toPromise';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { Car } from '../domain/car';
+import { SearchResponse } from '../domain/search.response';
 
 @Injectable()
 export class CarService {
@@ -13,7 +13,7 @@ export class CarService {
   getCarsMedium() {
     return this.http.get<any>('assets/cars-medium.json')
       .toPromise()
-      .then(res => <Car[]>res.data)
+      .then(res => <SearchResponse[]>res.data)
       .then(data => data);
   }
 }

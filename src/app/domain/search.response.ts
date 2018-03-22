@@ -1,7 +1,7 @@
-export interface Car {
+export interface SearchResponse {
     creationTime?;
     service?;
-    brsubjectand?;
+    subject?;
     correlationId?;
     digest?;
 }
