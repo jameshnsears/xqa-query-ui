@@ -31,5 +31,8 @@ then
 
 ## 3. Run from CLI
 * npm install
-* ng build
 * ng serve --open
+
+or
+
+* ng test

@@ -18,7 +18,7 @@ import { XqueryComponent } from './xquery/xquery.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { SearchService } from './service/search.service';
-import { NodeService } from './service/node.service';
+import { StatusService } from './service/status.service';
 
 
 @NgModule({
@@ -42,7 +42,7 @@ import { NodeService } from './service/node.service';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     SearchService,
-    NodeService],
+    StatusService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

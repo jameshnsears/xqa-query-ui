@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { TreeNode } from 'primeng/primeng';
 
-import { NodeService } from '../service/node.service';
+import { StatusService } from '../service/status.service';
 
 @Component({
   selector: 'app-status',
@@ -10,12 +10,12 @@ import { NodeService } from '../service/node.service';
   styleUrls: ['./status.component.css']
 })
 export class StatusComponent implements OnInit {
-  files1: TreeNode[];
+  status: TreeNode[];
 
-  constructor(private nodeService: NodeService) { }
+  constructor(private statusService: StatusService) { }
 
   ngOnInit() {
-    this.nodeService.getFiles().then(files => this.files1 = files);
+    this.statusService.getStatusResponse().then(status => this.status = status);
   }
 
   refresh() {

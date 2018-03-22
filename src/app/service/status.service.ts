@@ -6,13 +6,13 @@ import { Injectable } from '@angular/core';
 import { TreeNode } from 'primeng/primeng';
 
 @Injectable()
-export class NodeService {
+export class StatusService {
   r?: any;
 
   constructor(private http: HttpClient) { }
 
-  getFiles() {
-    this.r = this.http.get<any>('assets/files.json')
+  getStatusResponse() {
+    this.r = this.http.get<any>('assets/status.response.json')
       .toPromise()
       .then(res => <TreeNode[]>res.data);
 

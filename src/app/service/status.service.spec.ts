@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { NodeService } from './node.service';
+import { StatusService } from './status.service';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
@@ -11,10 +11,10 @@ import { DataTableModule } from 'primeng/primeng';
 import { HttpClientModule } from '@angular/common/http';
 import { TreeTableModule } from 'primeng/primeng';
 
-describe('NodeService', () => {
+describe('StatusService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [NodeService],
+      providers: [StatusService],
       imports: [
         BrowserAnimationsModule,
         FormsModule,
@@ -28,7 +28,7 @@ describe('NodeService', () => {
     });
   });
 
-  it('should be created', inject([NodeService], (service: NodeService) => {
+  it('should be created', inject([StatusService], (service: StatusService) => {
     expect(service).toBeTruthy();
   }));
 });

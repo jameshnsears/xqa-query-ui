@@ -11,7 +11,7 @@ import { TreeTableModule } from 'primeng/primeng';
 
 import { HttpClientModule } from '@angular/common/http';
 
-import { NodeService } from '../service/node.service';
+import { StatusService } from '../service/status.service';
 
 describe('StatusComponent', () => {
   let component: StatusComponent;
@@ -28,7 +28,7 @@ describe('StatusComponent', () => {
         TreeTableModule,
         HttpClientModule,
       ],
-      providers: [NodeService]
+      providers: [StatusService]
     })
       .compileComponents();
   }));
