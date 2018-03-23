@@ -9,7 +9,6 @@ import { catchError, retry } from 'rxjs/operators';
 
 @Injectable()
 export class SearchService {
-
   constructor(private http: HttpClient) { }
 
   doSearch(searchValue: string): Observable<SearchResponse[]> {

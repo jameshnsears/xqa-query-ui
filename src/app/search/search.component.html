@@ -2,11 +2,11 @@
 
 <button type="button" (click)="search()" pButton label="Search"></button>
 
-{{error}}
+{{error}} 
 
 <p></p>
 
-<p-table [value]="searchResponses">
+<p-table [value]="searchResponses" [paginator]="true" [rows]="10">
   <ng-template pTemplate="header">
     <tr>
       <th>Time</th>

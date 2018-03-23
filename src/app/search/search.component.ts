@@ -11,26 +11,19 @@ import { SearchService } from '../service/search.service';
 export class SearchComponent implements OnInit {
   searchValue: string;
   searchResponses: SearchResponse[];
-
-  error: any;
+  error: string;
 
   constructor(private searchService: SearchService) {
     this.searchValue = '';
   }
 
   search() {
-    if (this.searchValue === '') {
-      this.error = 'no search term entered';
-      this.searchResponses = [];
-    } else {
-      this.searchService.doSearch(this.searchValue)
+    this.error = '';
+    this.searchService.doSearch(this.searchValue)
       .subscribe(
         searchResponses => this.searchResponses = searchResponses,
         error => this.error = error
       );
-
-      console.log(this.searchResponses);
-    }
   }
 
   ngOnInit() {

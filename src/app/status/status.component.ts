@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { TreeNode } from 'primeng/primeng';
-
 import { StatusService } from '../service/status.service';
 
 @Component({
@@ -10,14 +9,21 @@ import { StatusService } from '../service/status.service';
   styleUrls: ['./status.component.css']
 })
 export class StatusComponent implements OnInit {
-  status: TreeNode[];
+  statusResponse: TreeNode[];
+  error: any;
 
-  constructor(private statusService: StatusService) { }
+  constructor(private statusService: StatusService) {
+  }
 
   ngOnInit() {
-    this.statusService.getStatusResponse().then(status => this.status = status);
+    this.refresh();
   }
 
   refresh() {
+    this.statusService.doRefresh()
+    .subscribe(
+      statusResponse => this.statusResponse = statusResponse,
+      error => this.error = error
+    );
   }
 }
