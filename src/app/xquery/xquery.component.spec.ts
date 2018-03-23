@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { XqueryComponent } from './xquery.component';
+import { XQueryComponent } from './xquery.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
@@ -9,26 +9,32 @@ import { TabViewModule } from 'primeng/primeng';
 import { InputTextModule } from 'primeng/primeng';
 import { ButtonModule } from 'primeng/primeng';
 
-describe('XqueryComponent', () => {
-  let component: XqueryComponent;
-  let fixture: ComponentFixture<XqueryComponent>;
+import { HttpClientModule } from '@angular/common/http';
+
+import { XQueryService } from '../service/xquery.service';
+
+describe('XQueryComponent', () => {
+  let component: XQueryComponent;
+  let fixture: ComponentFixture<XQueryComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ XqueryComponent ],
+      declarations: [ XQueryComponent ],
       imports: [
         BrowserAnimationsModule,
         FormsModule,
         TabViewModule,
         InputTextModule,
-        ButtonModule
+        ButtonModule,
+        HttpClientModule,
       ],
+      providers: [XQueryService]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(XqueryComponent);
+    fixture = TestBed.createComponent(XQueryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
