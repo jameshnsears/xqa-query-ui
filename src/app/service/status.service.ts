@@ -5,13 +5,17 @@ import { TreeNode } from 'primeng/primeng';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { catchError, retry } from 'rxjs/operators';
 
+import { environment } from '../../environments/environment';
+
 @Injectable()
 export class StatusService {
   constructor(private http: HttpClient) {
   }
 
   doRefresh(): Observable<TreeNode[]> {
-    return this.http.get<TreeNode[]>('assets/status.response.json')
+    const url = `${environment.endpointHost}${environment.endpointStatus}`;
+
+    return this.http.get<TreeNode[]>(url)
       .pipe(
         retry(3),
         catchError(this.handleError)

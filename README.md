@@ -16,10 +16,6 @@
 * docker-compose -p "dev" build --force-rm
 
 ### 2.2. Bring up
-* ng serve --open
-
-or
-
 * docker-compose -p "dev" up -d
 
 then
@@ -32,6 +28,10 @@ then
 ## 3. Run from CLI
 * npm install
 * ng serve --open
+
+or
+
+* ng serve --open --env=prod
 
 or
 

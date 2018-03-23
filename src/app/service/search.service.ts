@@ -5,13 +5,16 @@ import { SearchResponse } from '../domain/search.response';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { catchError, retry } from 'rxjs/operators';
 
+import { environment } from '../../environments/environment';
+
 @Injectable()
 export class SearchService {
   constructor(private http: HttpClient) { }
 
   doSearch(searchValue: string): Observable<SearchResponse[]> {
-    return this.http.get<SearchResponse[]>('assets/search.response.json',
-      { params: new HttpParams().set('searchValue', searchValue) })
+    const url = `${environment.endpointHost}${environment.endpointSearch}`;
+
+    return this.http.get<SearchResponse[]>(url, { params: new HttpParams().set('searchValue', searchValue) })
     .pipe(
       retry(3),
       catchError(this.handleError)
