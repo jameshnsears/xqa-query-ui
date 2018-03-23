@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { XQueryServices } from '../service/xquery.service';
+import { XQueryService } from '../service/xquery.service';
 
 
 @Component({
@@ -8,12 +8,11 @@ import { XQueryServices } from '../service/xquery.service';
   templateUrl: './xquery.component.html',
   styleUrls: ['./xquery.component.css']
 })
-export class XqueryComponent implements OnInit {
+export class XQueryComponent implements OnInit {
   xquery: string;
   materialisedResponse: string;
-  error: string;
 
-  constructor(private statusService: StatusService) {
+  constructor(private xqueryService: XQueryService) {
   }
 
   ngOnInit() {
@@ -25,7 +24,11 @@ export class XqueryComponent implements OnInit {
   }
 
   run() {
-    this.materialisedResponse = '<some xquery response/>';
+    this.xqueryService.doRun(this.xquery)
+    .subscribe(
+      materialisedResponse => this.materialisedResponse = materialisedResponse['xqueryResponse'],
+      error => this.materialisedResponse = error
+    );
   }
 
 }

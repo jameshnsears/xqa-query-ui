@@ -13,12 +13,13 @@ import { TreeTableModule } from 'primeng/primeng';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { StatusComponent } from './status/status.component';
-import { XqueryComponent } from './xquery/xquery.component';
+import { XQueryComponent } from './xquery/xquery.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
 import { SearchService } from './service/search.service';
 import { StatusService } from './service/status.service';
+import { XQueryService } from './service/xquery.service';
 
 
 @NgModule({
@@ -26,7 +27,7 @@ import { StatusService } from './service/status.service';
     AppComponent,
     SearchComponent,
     StatusComponent,
-    XqueryComponent
+    XQueryComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +43,8 @@ import { StatusService } from './service/status.service';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     SearchService,
-    StatusService],
+    StatusService,
+    XQueryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
