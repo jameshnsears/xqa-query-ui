@@ -10,7 +10,7 @@ import { StatusService } from '../service/status.service';
 })
 export class StatusComponent implements OnInit {
   statusResponse: TreeNode[];
-  error: any;
+  error: string;
 
   constructor(private statusService: StatusService) {
   }

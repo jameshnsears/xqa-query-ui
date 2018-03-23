@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { SearchResponse } from '../domain/search.response';
+import { TreeNode } from 'primeng/primeng';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { catchError, retry } from 'rxjs/operators';
 
 @Injectable()
-export class SearchService {
-  constructor(private http: HttpClient) { }
+export class XQueryService {
+  constructor(private http: HttpClient) {
+  }
 
-  doSearch(searchValue: string): Observable<SearchResponse[]> {
-    return this.http.get<SearchResponse[]>('assets/search.response.json',
-      { params: new HttpParams().set('searchValue', searchValue) })
-    .pipe(
-      retry(3),
-      catchError(this.handleError)
-    );
+  doRefresh(): Observable<TreeNode[]> {
+    return this.http.get<TreeNode[]>('assets/xquery.response.json')
+      .pipe(
+        retry(3),
+        catchError(this.handleError)
+      );
   }
 
   private handleError(error: HttpErrorResponse) {
