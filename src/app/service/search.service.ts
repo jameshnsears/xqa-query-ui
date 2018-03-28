@@ -4,7 +4,6 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { SearchResponse } from '../domain/search.response';
 import { catchError, retry } from 'rxjs/operators';
-
 import { environment } from '../../environments/environment';
 
 @Injectable()
