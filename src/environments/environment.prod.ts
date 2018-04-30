@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  endpointHost: 'xqa-db-rest/',
+  endpointHost: 'xqa-query-balancer/',
   endpointSearch: 'search',
   endpointXQuery: 'xquery'
 };
