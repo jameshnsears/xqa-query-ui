@@ -6,13 +6,14 @@
 
 ### 1.1. (optionally) Install without package.json
 ```
-npm install typescript
-npm install @angular/cli
+npm install typescript --save
+npm install @angular/cli --save
 npm install primeng --save
 npm install @angular/animations --save
 npm install font-awesome --save
 npm install rxjs-compat --save
 npm install @angular/cdk --save
+npm install typescript@">=3.1.1 <3.2" --save
 ```
 
 ### 1.2. (optionall) Update package.json
@@ -40,10 +41,7 @@ then
 * docker-compose -p "dev" down -v
 
 ## 3. Run from CLI
-```
-npm install
-node_modules/@angular/cli/bin/ng serve --open
-```
+* node_modules/@angular/cli/bin/ng serve --open
 
 or
 
