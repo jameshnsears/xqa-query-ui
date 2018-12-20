@@ -6,10 +6,13 @@
 
 ### 1.1. (optionally) Install without package.json
 ```
-npm install -g @angular/cli
+npm install typescript
+npm install @angular/cli
 npm install primeng --save
 npm install @angular/animations --save
 npm install font-awesome --save
+npm install rxjs-compat --save
+npm install @angular/cdk --save
 ```
 
 ### 1.2. (optionall) Update package.json
@@ -22,7 +25,7 @@ node_modules/npm-check-updates/bin/ncu -u
 ## 2. Docker
 ### 2.1. Build locally
 ```
-ng build --prod --build-optimizer
+node_modules/@angular/cli/bin/ng build --prod --build-optimizer
 docker-compose -p "dev" build --force-rm
 ```
 
@@ -39,13 +42,13 @@ then
 ## 3. Run from CLI
 ```
 npm install
-ng serve --open
+node_modules/@angular/cli/bin/ng serve --open
 ```
 
 or
 
-* ng serve --open --env=prod
+* node_modules/@angular/cli/bin/ng serve --open --env=prod
 
 or
 
-* ng test
+* ngnode_modules/@angular/cli/bin/ng test

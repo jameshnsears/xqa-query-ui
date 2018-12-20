@@ -1,11 +1,11 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
+import { throwError } from 'rxjs';
 
 export class CommonService {
     protected handleError(error: HttpErrorResponse) {
         if (error.error instanceof ErrorEvent) {
             console.error(error.error.message);
         }
-        return new ErrorObservable(`${error.status} - unable to get data`);
+        return throwError(`${error.status} - unable to get data`);
     }
 }
