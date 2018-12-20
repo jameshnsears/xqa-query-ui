@@ -5,15 +5,26 @@
 * npm install
 
 ### 1.1. (optionally) Install without package.json
-* npm install -g @angular/cli
-* npm install primeng --save
-* npm install @angular/animations --save
-* npm install font-awesome --save
+```
+npm install -g @angular/cli
+npm install primeng --save
+npm install @angular/animations --save
+npm install font-awesome --save
+```
+
+### 1.2. (optionall) Update package.json
+```
+npm install npm-check-updates
+node_modules/npm-check-updates/bin/ncu
+node_modules/npm-check-updates/bin/ncu -u
+```
 
 ## 2. Docker
 ### 2.1. Build locally
-* ng build --prod --build-optimizer
-* docker-compose -p "dev" build --force-rm
+```
+ng build --prod --build-optimizer
+docker-compose -p "dev" build --force-rm
+```
 
 ### 2.2. Bring up
 * docker-compose -p "dev" up -d
@@ -26,8 +37,10 @@ then
 * docker-compose -p "dev" down -v
 
 ## 3. Run from CLI
-* npm install
-* ng serve --open
+```
+npm install
+ng serve --open
+```
 
 or
 
