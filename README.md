@@ -2,6 +2,7 @@
 * a simple web UI to run XQuery and for ad-hoc status / auditing queries.
 
 ## 1. Install
+* supt apt purge npm
 * sudo apt install npm
 * npm install
 

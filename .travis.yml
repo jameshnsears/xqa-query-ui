@@ -1,5 +1,17 @@
 sudo: required
 
+notifications:
+email: james.hn.sears@gmail.com
+
+env:
+  global:
+    # travis encrypt COVERALLS_REPO_TOKEN=...
+    - secure: "Spy1/amTNJ9wweOXpY/fpCm+bPovP6pK2Paby8RQd8qFYAY/pqnVwpu1D4eZ/ZsA5JA7NVe4UrXiEOnV51LSMj5DKgqu7SUFVKiUIwh3ZvLGXSmq7JNpLfjKVlfFow0I/QItD7uCo7AjYQ0Hg/Cs7EhI9L5hPTTAAmk2A7vEamIwOZU1m0Km+eW715+HKqD2Q4bfgSlK7vo8z1E/TjFtVFHA+sQdU8yi0/sKgwOh579tnD857zvO0HoxdTlamj3Cr6DT8f7JdnIULcFcoC81cy5DpujUWpgrkmc7lWtS0CcKJJ+TIADNN0bSG8MALc6jqG7CxpLcxEOwsFRe2t5slHe7S0f6ST+iihe7BVOyBv4MQQmK1OS+IF4aktkz62YfzSgTl+saVoJRo/vNGStN250IYfom+ePi8RODPtYfQwdCD1EqCsXgDSrodj7fLW+qhd+eqybxXfDAj3USvzhHjQmDVp6pFil2x+FDIDqW1y8rW5BaMuojowfKY0A1suu4k8TSvxSxyd+L0uI9xkr90b6XEJsK4BzofFmo/sR262s9JbJr3aAxEUHFJ1nwROaglefhAJCaie9iDTYdcthvKvNl+Iwj1+5WZQktOK8S4oCsXGwgjYZvCN1L2dk3Gjz/SzjpyHFv5TVdm1YZvAGMX3SHBhsx8kZYi0kz50lwbpw="
+    # travis encrypt CODACY_PROJECT_TOKEN=...
+    - secure: "CcW4zz5rJnlRGNJ+hmLjMftdU1011B9t0u1tJffPNZJnI9tNoDb0Hd4yTyiqj9VETU18uToOax5DR/RJKfgpwKORiVDpKk5ZI1CEYImdSsWcZTFG/EDqf4R/kG/13XtQLOtfbS9e429qloOy6YzYj8PkK2l695x0F+jnBtOE0On9nKQ3S/s9sy15+drkx+uzI2yc6ZdcsU3Gy3Xi3lUlAyLRAgGft7EWfhKzw2qPUh7VJvGzXK8pnSi6783F+3exKhrUzR4xYsSh4rj+aARuiMAh9cbY9Shz8pVZr/xflP5mw86e6FV5V9iCpm9a/6uuESpbW9uTJs6gp0uGWpilFhNwBzvTnlOn2ifqIs2HwqbhVBlYMtAJ5rHhqGyobm835kYl/9PDMlbfT/coXFJcMi5wQL5/PxOJwsw8Lagg3BLoWIVX7GeIb9z/llDv7c4AZaM2VXZ4tRP9fOz2Z47y8QW01T5sr3VM0VrzPXMjIf/PIKmBZfsmsK0w0Ue10vbRVGhQRw1VpJ5BOBMbYUsUbIMwJXAaknaLyoeCTmacou9KRVcVL3kEgbFInqEqnVJZxZEA4h+SlvTJLyXmZPEU9z++5gf24G95m+b5oulc9lDxzzqshPWCbm9iMLUgzEF+kbdCaVfM/6QWDdEK805l7D7J17bgNyq841JxCn8YX9E="
+git:
+  depth: false
+
 language: node_js
 
 node_js:
@@ -12,13 +24,9 @@ apt:
   packages:
     - google-chrome-stable
 
-branches:
-  only:
-  - master
-
 cache:
   directories:
-    - "node_modules"
+    - node_modules
 
 before_script:
   - export CHROME_BIN=chromium-browser
@@ -27,10 +35,12 @@ before_script:
   - npm install
 
 script:
-  - ng lint
-  - ng test --code-coverage --watch false
-  # - ng e2e
+  - node_modules/@angular/cli/bin/ng lint
+  - node_modules/@angular/cli/bin/ng test --code-coverage --watch false
+  # - node_modules/@angular/cli/bin/ng e2e
 
-  - ng build --prod --build-optimizer
+  - node_modules/@angular/cli/bin/ng build --prod --build-optimizer
 
-after_script: "npm install coveralls && cat ./coverage/lcov.info | coveralls"
+after_script:
+  - npm install coveralls && cat ./coverage/lcov.info | coveralls
+  - npm install codacy-coverage && cat ./coverage/lcov.info | codacy-coverage
