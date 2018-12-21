@@ -25,6 +25,7 @@
     "@angular/router": "^7.1.4",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
+    "karma-junit-reporter": "^1.2.0",
     "primeng": "^7.0.3",
     "rxjs": "^6.3.3",
     "rxjs-compat": "^6.3.3",
