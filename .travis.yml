@@ -9,6 +9,13 @@ env:
     - secure: "Spy1/amTNJ9wweOXpY/fpCm+bPovP6pK2Paby8RQd8qFYAY/pqnVwpu1D4eZ/ZsA5JA7NVe4UrXiEOnV51LSMj5DKgqu7SUFVKiUIwh3ZvLGXSmq7JNpLfjKVlfFow0I/QItD7uCo7AjYQ0Hg/Cs7EhI9L5hPTTAAmk2A7vEamIwOZU1m0Km+eW715+HKqD2Q4bfgSlK7vo8z1E/TjFtVFHA+sQdU8yi0/sKgwOh579tnD857zvO0HoxdTlamj3Cr6DT8f7JdnIULcFcoC81cy5DpujUWpgrkmc7lWtS0CcKJJ+TIADNN0bSG8MALc6jqG7CxpLcxEOwsFRe2t5slHe7S0f6ST+iihe7BVOyBv4MQQmK1OS+IF4aktkz62YfzSgTl+saVoJRo/vNGStN250IYfom+ePi8RODPtYfQwdCD1EqCsXgDSrodj7fLW+qhd+eqybxXfDAj3USvzhHjQmDVp6pFil2x+FDIDqW1y8rW5BaMuojowfKY0A1suu4k8TSvxSxyd+L0uI9xkr90b6XEJsK4BzofFmo/sR262s9JbJr3aAxEUHFJ1nwROaglefhAJCaie9iDTYdcthvKvNl+Iwj1+5WZQktOK8S4oCsXGwgjYZvCN1L2dk3Gjz/SzjpyHFv5TVdm1YZvAGMX3SHBhsx8kZYi0kz50lwbpw="
     # travis encrypt CODACY_PROJECT_TOKEN=...
     - secure: "CcW4zz5rJnlRGNJ+hmLjMftdU1011B9t0u1tJffPNZJnI9tNoDb0Hd4yTyiqj9VETU18uToOax5DR/RJKfgpwKORiVDpKk5ZI1CEYImdSsWcZTFG/EDqf4R/kG/13XtQLOtfbS9e429qloOy6YzYj8PkK2l695x0F+jnBtOE0On9nKQ3S/s9sy15+drkx+uzI2yc6ZdcsU3Gy3Xi3lUlAyLRAgGft7EWfhKzw2qPUh7VJvGzXK8pnSi6783F+3exKhrUzR4xYsSh4rj+aARuiMAh9cbY9Shz8pVZr/xflP5mw86e6FV5V9iCpm9a/6uuESpbW9uTJs6gp0uGWpilFhNwBzvTnlOn2ifqIs2HwqbhVBlYMtAJ5rHhqGyobm835kYl/9PDMlbfT/coXFJcMi5wQL5/PxOJwsw8Lagg3BLoWIVX7GeIb9z/llDv7c4AZaM2VXZ4tRP9fOz2Z47y8QW01T5sr3VM0VrzPXMjIf/PIKmBZfsmsK0w0Ue10vbRVGhQRw1VpJ5BOBMbYUsUbIMwJXAaknaLyoeCTmacou9KRVcVL3kEgbFInqEqnVJZxZEA4h+SlvTJLyXmZPEU9z++5gf24G95m+b5oulc9lDxzzqshPWCbm9iMLUgzEF+kbdCaVfM/6QWDdEK805l7D7J17bgNyq841JxCn8YX9E="
+
+addons:
+  sonarcloud:
+    organization: "jameshnsears-github"
+    token:
+      secure: "J0IP7xImaCjDQwtfn0UBzm3cfs61LcumdZSwAfMOh2uhyRKYs6vgUU5JSrA0YMuX1VT6kNmpEFZWVmPDGaAWj+Pg0qnn4uW8D8OWxImZUkFZCyPFPwcQSl0bkr87h2A8l1Z80srjFF0Y9+FYVERq/8Gz4EcIa22ZG6wpNTq+aZQbsXn5LiFeGBs/n0QXtJRSWzd8wrcc0/BkdCrJ/Kxe4CbINcmFip5lSmuJDZKFN6Ccscwfm7L2SdYKD5KAD84keMGhQdpVkKuyHs2eRsz7744j3VmKsY3LiXD540ETsyxhoSZfbjmbimdzfNce5d/2BN+EFfwhQ57MxjDnpGouVBKFIJ0hHaZSp71lR57fLweSLljzqrpoKEUbjVXdrWlPv5svWhhrzjROkZOMCTR/NEXn8ZiYV542adWWZIwkE8Mb2XJT/PlWsYyqmsbbLSebhBLQGepIich3mcJ6d0jVUmhYdngHO6DKQSZMIKXRCb1XQ1Y3H4ZjzH1M0fSwQjlmgBOH//BaKlHDreVyvXwIqAswNPo+AlZfFh7DvQMOGQyGnZX1sxFunYNePKg6fL8GzZk9pwRefCTj9YPQ1tRsVxcOcLC6TWmV4xnoor5UpUoE9QNw+XI1tMRya0OYJG2NbkEEv6M3Bcb3bN+VH7em9x2ZR0Xc8SQqoundgS8yGpQ="
+
 git:
   depth: false
 
@@ -33,6 +40,7 @@ before_script:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
   - npm install
+  - npm install typescript@">=3.1.1 <3.2"
 
 script:
   - node_modules/@angular/cli/bin/ng lint
@@ -41,6 +49,8 @@ script:
 
   - node_modules/@angular/cli/bin/ng build --prod --build-optimizer
 
-after_script:
+after_success:
   - npm install coveralls && cat ./coverage/lcov.info | coveralls
   - npm install codacy-coverage && cat ./coverage/lcov.info | codacy-coverage
+  - sonar-scanner
+ 
