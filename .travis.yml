@@ -27,7 +27,9 @@ git:
 language: node_js
 
 node_js:
-  - "8"
+  - '8'
+  - '9'
+  - '10'
 
 cache:
   directories:

@@ -11,7 +11,7 @@ module.exports = function (config) {
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
       require('@angular-devkit/build-angular/plugins/karma'),
-      require('karma-junit-reporter')
+      require('karma-sonarqube-reporter')
     ],
     client:{
       clearContext: false // leave Jasmine Spec Runner output visible in browser
@@ -20,17 +20,25 @@ module.exports = function (config) {
       dir: require('path').join(__dirname, 'coverage'), reports: [ 'html', 'lcovonly' ],
       fixWebpackSourcePaths: true
     },
-    junitReporter: {
-      outputDir: undefined, // results will be saved as $outputDir/$browserName.xml
-      outputFile: 'test-report.xml', // if included, results will be saved as $outputDir/$browserName/$outputFile
-      suite: '', // suite will become the package name attribute in xml testsuite element
-      useBrowserName: false, // add browser name to report and classes names
-      nameFormatter: undefined, // function (browser, result) to customize the name attribute in xml testcase element
-      classNameFormatter: undefined, // function (browser, result) to customize the classname attribute in xml testcase element
-      properties: {} // key value pair of properties to add to the <properties> section of the report
+    sonarqubeReporter: {
+      basePath: 'src/app',        // test files folder
+      filePattern: '**/*spec.ts', // test files glob pattern
+      encoding: 'utf-8',          // test files encoding
+      outputFolder: 'reports',    // report destination
+      legacyMode: false,          // report for Sonarqube < 6.2 (disabled)
+      reportName: (metadata) => { // report name callback
+        /**
+         * Report metadata array:
+         * - metadata[0] = browser name
+         * - metadata[1] = browser version
+         * - metadata[2] = plataform name
+         * - metadata[3] = plataform version
+         */
+         return metadata.concat('xml').join('.');
+      },
     },
 
-    reporters: ['progress', 'kjhtml', 'junit'],
+    reporters: ['progress', 'kjhtml', 'sonarqube'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,

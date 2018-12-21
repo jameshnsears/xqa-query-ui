@@ -1,0 +1,20 @@
+<?xml version='1.0'?>
+<testExecutions version='1'>
+    <file path='src/app/service/xquery.service.spec.ts'>
+        <testCase name='XQueryService should be created' duration='103'/>
+    </file>
+    <file path='src/app/app.component.spec.ts'>
+        <testCase name='AppComponent should render p-tabView' duration='23'/>
+        <testCase name='AppComponent should create the app' duration='16'/>
+        <testCase name='AppComponent should have as title &apos;XQA&apos;' duration='14'/>
+    </file>
+    <file path='src/app/service/search.service.spec.ts'>
+        <testCase name='SearchService should be created' duration='9'/>
+    </file>
+    <file path='src/app/search/search.component.spec.ts'>
+        <testCase name='SearchComponent should create' duration='246'/>
+    </file>
+    <file path='src/app/xquery/xquery.component.spec.ts'>
+        <testCase name='XQueryComponent should create' duration='66'/>
+    </file>
+</testExecutions>
