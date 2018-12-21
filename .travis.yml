@@ -44,6 +44,7 @@ script:
   - node_modules/@angular/cli/bin/ng lint
   - node_modules/@angular/cli/bin/ng test --code-coverage --watch false
   # - node_modules/@angular/cli/bin/ng e2e
+  - ls -al
 
   - node_modules/@angular/cli/bin/ng build --prod --build-optimizer
 
