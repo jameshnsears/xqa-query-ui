@@ -1,13 +1,13 @@
 # xqa-query-ui [![Build Status](https://travis-ci.org/jameshnsears/xqa-query-ui.svg?branch=master)](https://travis-ci.org/jameshnsears/xqa-query-ui) [![Coverage Status](https://coveralls.io/repos/github/jameshnsears/xqa-query-ui/badge.svg?branch=master)](https://coveralls.io/github/jameshnsears/xqa-query-ui?branch=master) [![sonarcloud](https://sonarcloud.io/api/project_badges/measure?project=jameshnsears_xqa-query-ui&metric=alert_status)](https://sonarcloud.io/dashboard?id=jameshnsears_xqa-query-ui) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a788ad26f4fb4d61b76e2321f85a3f2f)](https://www.codacy.com/app/jameshnsears/xqa-query-ui?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jameshnsears/xqa-query-ui&amp;utm_campaign=Badge_Grade)
-* a simple web UI to run XQuery and for ad-hoc status / auditing queries.
+* UI for querying XQA.
 
 ## 1. High Level Design
 ![High Level Design](uml/xqa-query-ui.jpg)
 
 ## 2. Install
-* supt apt purge npm
+* sudo apt purge npm
 * sudo apt install npm
-* npm install
+* npm install  # using package.json
 
 ### 2.1. (optional) Update package.json
 ```
@@ -35,10 +35,10 @@ or
 
 or
 
-* ngnode_modules/@angular/cli/bin/ng test
+* node_modules/@angular/cli/bin/ng test
 
 ## 5. Test
-* visit: [http://127.0.0.1/](http://127.0.0.1/)
+* visit: [http://127.0.0.1:4200](http://127.0.0.1:4200)
 
 ## 6. Teardown
 * docker-compose -p "dev" down -v
