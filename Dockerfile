@@ -1,4 +1,4 @@
-FROM nginx:1.12.2-alpine
+FROM nginx:1.15.8
 
 COPY dist /usr/share/nginx/html
 
