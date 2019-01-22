@@ -1,6 +1,7 @@
 enable xqa-shard's to be run, via a paramater, using container disk not RAM
 = then they are queryable
 = then update /home/jsears/GIT_REPOS/xqa-query-balancer/README.md
+= maybe then I can just restart an old container and it remembers its data?
 
 docker ps -a | grep xqa-shard
-basexclient -U admin -P admin -p 32773 
+basexclient -U admin -P admin -p 32773
