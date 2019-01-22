@@ -6,7 +6,7 @@ services:
     image: xqa-query-ui
     container_name: xqa-query-ui
     ports:
-      - "80:80"
+      - "8888:80"
     networks:
       - xqa
 

@@ -12,7 +12,9 @@
 ### 2.1. (optional) Update package.json
 ```
 npm install npm-check-updates
+
 node_modules/npm-check-updates/bin/ncu
+
 node_modules/npm-check-updates/bin/ncu -u
 ```
 
@@ -20,22 +22,26 @@ node_modules/npm-check-updates/bin/ncu -u
 ### 3.1. Build locally
 ```
 node_modules/@angular/cli/bin/ng build --prod --build-optimizer
-docker-compose -p "dev" build --force-rm
+
+docker-compose build --force-rm
 ```
 
 #### 3.1.1. Populate environment with data
 * populate xqa-shard(s) and xqa-db using xqa-test-data:
 ```
 docker-compose up -d xqa-message-broker xqa-db xqa-db-amqp xqa-ingest-balancer xqa-query-balancer
+
 docker-compose scale xqa-shard=2
-docker run -d --net="xqa-query-balancer_xqa" --name="xqa-ingest" -v $HOME/GIT_REPOS/xqa-test-data:/xml jameshnsears/xqa-ingest:latest -message_broker_host xqa-message-broker -path /xml
+
+docker run -d --net="xqa-query-ui_xqa" --name="xqa-ingest" -v $HOME/GIT_REPOS/xqa-test-data:/xml jameshnsears/xqa-ingest:latest -message_broker_host xqa-message-broker -path /xml
 ```
 * wait until data in xqa:
     * docker logs xqa-ingest | grep "FINISHED - sent: 40/40"
     * docker-compose logs xqa-shard | grep "size="
 
 ### 3.2. Bring up
-* docker-compose -p "dev" up -d
+* docker-compose up -d xqa-query-ui
+* * visit: [http://127.0.0.1:8888](http://127.0.0.1:8888)
 
 ## 4. Run from CLI
 * node_modules/@angular/cli/bin/ng serve --open
@@ -52,4 +58,4 @@ or
 * visit: [http://127.0.0.1:4200](http://127.0.0.1:4200)
 
 ## 6. Teardown
-* docker-compose -p "dev" down -v
+* docker-compose down -v
