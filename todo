@@ -1,7 +1,43 @@
-enable xqa-shard's to be run, via a paramater, using container disk not RAM
-= then they are queryable
-= then update /home/jsears/GIT_REPOS/xqa-query-balancer/README.md
-= maybe then I can just restart an old container and it remembers its data?
+https://www.testingexcellence.com/jmeter-foreach-controller/
+https://jmeter.apache.org/usermanual/component_reference.html#ForEach_Controller
+https://jmeter.apache.org/usermanual/component_reference.html#JSON_Assertion
+https://jmeter.apache.org/usermanual/component_reference.html#Gaussian_Random_Timer
+http://2min2code.com/articles/jmeter_intro/random_controller
+https://octoperf.com/blog/2018/01/25/jmeter-csv-data-set-config/
 
-docker ps -a | grep xqa-shard
-basexclient -U admin -P admin -p 32773
+A good scaling test is to set up an Apache JMeter job to hit an endpoint you are developing a few thousand times while linked to a profiler
+= jmeter + visualvm
+= should reveal mem leaks
+
+ForEach Controller
+Random Logic Controller
+Gaussian Random Timer
+JSON Assertion - assert path present!
+Response Time Graph
+Summary Report
+Comparison Assertion Visualizer
+
+https://jmeter-plugins.org/install/Install/
+
+https://www.soapui.org/open-source.html
+
+have a circleci for xqa-query-balancer that does lots
+of e2e jmeter testing, with different workflows doing different volumes of tests
++
+have it tun everyt night
+
+https://rabbitmq.github.io/rabbitmq-perf-test/stable/htmlsingle/
+
+---
+
+use java flight recorder
+https://dzone.com/articles/java-11-features-java-flight-recorder
++
+use it against jmeter
+https://dzone.com/articles/using-java-flight-recorder-with-openjdk-11-1
+https://docs.oracle.com/javacomponents/jmc-5-4/jfr-runtime-guide/about.htm#JFRUH171
+
+---
+
+https://developers.redhat.com/cheat-sheets/kubernetes/
+https://developers.redhat.com/cheat-sheets/containers/
