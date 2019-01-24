@@ -1,25 +1,12 @@
 https://www.testingexcellence.com/jmeter-foreach-controller/
-https://jmeter.apache.org/usermanual/component_reference.html#ForEach_Controller
-https://jmeter.apache.org/usermanual/component_reference.html#JSON_Assertion
-https://jmeter.apache.org/usermanual/component_reference.html#Gaussian_Random_Timer
-http://2min2code.com/articles/jmeter_intro/random_controller
-https://octoperf.com/blog/2018/01/25/jmeter-csv-data-set-config/
+
+--
 
 A good scaling test is to set up an Apache JMeter job to hit an endpoint you are developing a few thousand times while linked to a profiler
 = jmeter + visualvm
 = should reveal mem leaks
 
-ForEach Controller
-Random Logic Controller
-Gaussian Random Timer
-JSON Assertion - assert path present!
-Response Time Graph
-Summary Report
-Comparison Assertion Visualizer
-
-https://jmeter-plugins.org/install/Install/
-
-https://www.soapui.org/open-source.html
+'https://www.soapui.org/open-source.html
 
 have a circleci for xqa-query-balancer that does lots
 of e2e jmeter testing, with different workflows doing different volumes of tests
