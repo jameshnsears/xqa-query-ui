@@ -1,19 +1,6 @@
-https://www.testingexcellence.com/jmeter-foreach-controller/
-
---
-
 A good scaling test is to set up an Apache JMeter job to hit an endpoint you are developing a few thousand times while linked to a profiler
 = jmeter + visualvm
 = should reveal mem leaks
-
-'https://www.soapui.org/open-source.html
-
-have a circleci for xqa-query-balancer that does lots
-of e2e jmeter testing, with different workflows doing different volumes of tests
-+
-have it tun everyt night
-
-https://rabbitmq.github.io/rabbitmq-perf-test/stable/htmlsingle/
 
 ---
 
