@@ -20,9 +20,7 @@ node_modules/npm-check-updates/bin/ncu -u
 
 ## 3. Build locally
 ```
-node_modules/@angular/cli/bin/ng build --prod --build-optimizer
-
-docker-compose build --force-rm
+./build.sh
 ```
 
 ## 4. Docker
