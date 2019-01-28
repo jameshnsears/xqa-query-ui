@@ -9,10 +9,16 @@ services:
       - "8888:80"
     networks:
       - xqa
+    depends_on:
+      - xqa-query-balancer
 
   xqa-query-balancer:
-    image: jameshnsears/xqa-query-balancer
+    image: jameshnsears/xqa-query-balancer:latest
+    image: xqa-query-balancer
     container_name: xqa-query-balancer
+    environment:
+      - shardResponseTimeout=10000
+      - shardResponseSecondaryTimeout=5000
     ports:
       - "9090:9090"
       - "9091:9091"
@@ -33,7 +39,7 @@ services:
       - xqa
 
   xqa-db-amqp:
-    image: jameshnsears/xqa-db-amqp
+    image: jameshnsears/xqa-db-amqp:latest
     container_name: xqa-db-amqp
     command: ['-message_broker_host', 'xqa-message-broker', '-storage_host', 'xqa-db', '-storage_port', '5432']
     networks:
@@ -71,15 +77,6 @@ services:
       - xqa
     depends_on:
       - xqa-message-broker
-
-  xqa-ingest:
-    image: jameshnsears/xqa-ingest
-    container_name: xqa-ingest
-    command: ["-message_broker_host", "xqa-message-broker"]
-    depends_on:
-      - xqa-message-broker
-    networks:
-      - xqa
 
 volumes:
   xqa-db:
