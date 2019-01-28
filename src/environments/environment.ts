@@ -5,7 +5,8 @@
 
 export const environment = {
   production: false,
-  endpointHost: '',
-  endpointSearch: 'assets/search.response.json',
-  endpointXQuery: 'assets/xquery.response.json'
+  endpointHost: 'http://0.0.0.0',
+  endpointPort: '9090',
+  endpointSearch: 'search',
+  endpointXQuery: 'xquery'
 };

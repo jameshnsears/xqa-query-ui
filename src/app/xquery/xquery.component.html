@@ -1,14 +1,11 @@
-<textarea [rows]="12" style="width:100%" pInputTextarea [(ngModel)]="xquery" placeholder="XQuery..."></textarea>
+<textarea [rows]="12" style="width:100%" pInputTextarea [(ngModel)]="xquery"></textarea>
 
-<div class="ui-g ui-fluid">
-    <div class="ui-g-10">
-    </div>
-    <div class="ui-g-1">
-        <button type="button" (click)="run()" pButton label="Run"></button>
-    </div>
-    <div class="ui-g-1">
-        <button type="button" (click)="clear()" pButton label="Clear"></button>
-    </div>
-</div>
+<p>NOTE: response time depends on xqa-query-balancer <b><i>shard*Timeout</i></b> values in docker-compose.yml</p>
+
+<button pButton type="button" label="run" class="ui-button-rounded" (click)="run()"></button>
+&nbsp;
+<button pButton type="button" label="clear" class="ui-button-rounded" (click)="clear()"></button>
+
+<p></p>
 
 <textarea [rows]="12" style="width:100%" pInputTextarea [(ngModel)]="materialisedResponse" readonly></textarea>

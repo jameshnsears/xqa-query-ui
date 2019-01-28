@@ -18,7 +18,7 @@ services:
     container_name: xqa-query-balancer
     environment:
       - shardResponseTimeout=10000
-      - shardResponseSecondaryTimeout=5000
+      - shardResponseSecondaryTimeout=2000
     ports:
       - "9090:9090"
       - "9091:9091"

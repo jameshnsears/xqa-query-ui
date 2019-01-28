@@ -16,10 +16,11 @@ export class XQueryComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.xquery = 'count(/)'
   }
 
   clear() {
-    this.xquery = '';
+    this.xquery = 'count(/)';
     this.materialisedResponse = '';
   }
 
@@ -30,5 +31,4 @@ export class XQueryComponent implements OnInit {
       error => this.materialisedResponse = error
     );
   }
-
 }

@@ -48,6 +48,10 @@ or
 
 * node_modules/@angular/cli/bin/ng test
 
+### 5.1. Debug in VSC
+* Debugger for Chrome extension installed.
+* In Debug Window, Launch Chrome (xqa-query-ui) & set a breakpoint.
+
 ## 6. Test
 * visit: [http://127.0.0.1:4200](http://127.0.0.1:4200)
 
