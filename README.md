@@ -4,12 +4,18 @@
 ## 1. High Level Design
 ![High Level Design](uml/xqa-query-ui.jpg)
 
-## 2. Install
+## 2. Screenshots
+![XQuery](screenshots/xquery.png)
+
+
+![Search](screenshots/search.png)
+
+## 3. Install
 * sudo apt purge npm
 * sudo apt install npm
 * npm install  # using package.json
 
-### 2.1. (optional) Update package.json
+### 3.1. (optional) Update package.json
 ```
 npm install npm-check-updates
 
@@ -18,13 +24,13 @@ node_modules/npm-check-updates/bin/ncu
 node_modules/npm-check-updates/bin/ncu -u
 ```
 
-## 3. Build locally
+## 4. Build locally
 ```
 ./build.sh
 ```
 
-## 4. Docker
-### 4.1. Populate environment with data
+## 5. Docker
+### 5.1. Populate environment with data
 * populate xqa-shard(s) and xqa-db using xqa-test-data:
 ```
 ./start.sh
@@ -33,11 +39,11 @@ node_modules/npm-check-updates/bin/ncu -u
     * docker logs xqa-ingest | grep "FINISHED - sent: 40/40"
     * docker-compose logs -f xqa-shard | grep "size="
 
-### 4.2. Bring up
+### 5.2. Bring up
 * docker-compose up -d xqa-query-ui
 * * visit: [http://127.0.0.1:8888](http://127.0.0.1:8888)
 
-## 5. Run from CLI
+## 6. Run from CLI
 * node_modules/@angular/cli/bin/ng serve --open
 
 or
@@ -48,14 +54,14 @@ or
 
 * node_modules/@angular/cli/bin/ng test
 
-### 5.1. Debug in VSC
+### 6.1. Debug in VSC
 * Debugger for Chrome extension installed.
 * In Debug Window, Launch Chrome (xqa-query-ui) & set a breakpoint.
 
-## 6. Test
+## 7. Test
 * visit: [http://127.0.0.1:4200](http://127.0.0.1:4200)
 
-## 7. Teardown
+## 8. Teardown
 ```
 ./stop.sh
 ```
