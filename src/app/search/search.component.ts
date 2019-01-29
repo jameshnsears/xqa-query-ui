@@ -13,6 +13,8 @@ export class SearchComponent implements OnInit {
   searchResponses: SearchResponse[];
   error: string;
 
+  model = { options: '2' };
+
   constructor(private searchService: SearchService) {
     this.searchValue = '';
   }

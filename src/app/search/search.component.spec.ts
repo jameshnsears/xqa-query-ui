@@ -9,6 +9,7 @@ import { TabViewModule } from 'primeng/primeng';
 import { InputTextModule } from 'primeng/primeng';
 import { ButtonModule } from 'primeng/primeng';
 import { TableModule } from 'primeng/table';
+import { RadioButtonModule } from 'primeng/radiobutton';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -28,6 +29,7 @@ describe('SearchComponent', () => {
         InputTextModule,
         ButtonModule,
         TableModule,
+        RadioButtonModule,
         HttpClientModule
       ],
       providers: [SearchService]

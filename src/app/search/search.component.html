@@ -1,4 +1,12 @@
 <input type="text" size="40" pInputText placeholder="Search..." [(ngModel)]="searchValue">
+&nbsp;
+
+<input type="radio" name="options" [(ngModel)]="model.options" value="1">
+my one
+<input type="radio" name="options" [(ngModel)]="model.options" value="2">
+my two
+<input type="radio" name="options" [(ngModel)]="model.options" value="3">
+my three
 
 <button type="button" (click)="search()" pButton label="Search"></button>
 
