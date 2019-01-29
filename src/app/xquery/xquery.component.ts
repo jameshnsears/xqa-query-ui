@@ -16,7 +16,7 @@ export class XQueryComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.xquery = 'count(/)'
+    this.xquery = 'count(/)';
   }
 
   clear() {

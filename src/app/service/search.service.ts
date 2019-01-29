@@ -16,10 +16,10 @@ export class SearchService extends CommonService {
     const url = `${environment.endpointHost}:${environment.endpointPort}/${environment.endpointSearch}/${searchSpace}/${searchValue}`;
     console.log(url);
 
-    return this.http.get<SearchResponse[]>(url) 
-    .pipe(
-      retry(3),
-      catchError(this.handleError)
-    );
+    return this.http.get<SearchResponse[]>(url)
+      .pipe(
+        retry(3),
+        catchError(this.handleError)
+      );
   }
 }

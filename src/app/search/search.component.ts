@@ -10,8 +10,8 @@ import { SearchService } from '../service/search.service';
 })
 export class SearchComponent implements OnInit {
   searchValue: string;
-  searchSpace: string = 'filename';
-  ie: string = '/xml/DBER-1923-0416.xml';
+  searchSpace = 'filename';
+  ie = '/xml/DBER-1923-0416.xml';
   error: string;
   searchResponses: SearchResponse[];
 
@@ -31,20 +31,20 @@ export class SearchComponent implements OnInit {
   }
 
   radioClick() {
-    switch(this.searchSpace) { 
-      case 'filename': { 
-        this.ie = '/xml/DBER-1923-0416.xml'; 
-         break; 
-      } 
-      case 'digest': { 
-        this.ie = 'aa84010'; 
-         break; 
-      } 
-      case 'service': { 
-        this.ie = 'ingest/25601c39'; 
-         break; 
-      } 
-   }
+    switch (this.searchSpace) {
+      case 'filename': {
+        this.ie = '/xml/DBER-1923-0416.xml';
+        break;
+      }
+      case 'digest': {
+        this.ie = 'aa84010';
+        break;
+      }
+      case 'service': {
+        this.ie = 'ingest/25601c39';
+        break;
+      }
+    }
 
   }
 

@@ -21,7 +21,7 @@ export class XQueryService extends CommonService {
     const url = `${environment.endpointHost}:${environment.endpointPort}/${environment.endpointXQuery}`;
     console.log(url);
 
-    let json = { xqueryRequest: xquery };
+    const json = { xqueryRequest: xquery };
     console.log(json);
 
     return this.http.post<string>(url, json, httpOptions)

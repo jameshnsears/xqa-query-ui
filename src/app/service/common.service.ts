@@ -11,5 +11,5 @@ export class CommonService {
                 `body was: ${error.error}`);
         }
         return throwError(error.message);
-    };
+    }
 }

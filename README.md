@@ -50,9 +50,8 @@ or
 
 * node_modules/@angular/cli/bin/ng serve --open --env=prod
 
-or
-
-* node_modules/@angular/cli/bin/ng test
+### 6.1. Testing the .spec.ts files
+* node_modules/@angular/cli/bin/ng test --watch=false
 
 ### 6.1. Debug in VSC
 * Debugger for Chrome extension installed.
