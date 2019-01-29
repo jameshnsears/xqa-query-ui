@@ -1,14 +1,13 @@
 # xqa-query-ui [![Build Status](https://travis-ci.org/jameshnsears/xqa-query-ui.svg?branch=master)](https://travis-ci.org/jameshnsears/xqa-query-ui) [![Coverage Status](https://coveralls.io/repos/github/jameshnsears/xqa-query-ui/badge.svg?branch=master)](https://coveralls.io/github/jameshnsears/xqa-query-ui?branch=master) [![sonarcloud](https://sonarcloud.io/api/project_badges/measure?project=jameshnsears_xqa-query-ui&metric=alert_status)](https://sonarcloud.io/dashboard?id=jameshnsears_xqa-query-ui) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a788ad26f4fb4d61b76e2321f85a3f2f)](https://www.codacy.com/app/jameshnsears/xqa-query-ui?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jameshnsears/xqa-query-ui&amp;utm_campaign=Badge_Grade)
 * UI for querying XQA.
 
-## 1. High Level Design
-![High Level Design](uml/xqa-query-ui.jpg)
-
-## 2. Screenshots
+## 1. Screenshots
 ![XQuery](screenshots/xquery.png)
 
-
 ![Search](screenshots/search.png)
+
+## 2. High Level Design
+![High Level Design](uml/xqa-query-ui.jpg)
 
 ## 3. Install
 * sudo apt purge npm
