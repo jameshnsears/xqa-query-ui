@@ -9,6 +9,7 @@ import { ButtonModule } from 'primeng/primeng';
 import { TableModule } from 'primeng/table';
 import { InputTextareaModule } from 'primeng/primeng';
 import { TreeTableModule } from 'primeng/primeng';
+import { RadioButtonModule } from 'primeng/radiobutton';
 
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
@@ -35,7 +36,8 @@ import { XQueryService } from './service/xquery.service';
     TableModule,
     HttpClientModule,
     InputTextareaModule,
-    TreeTableModule
+    TreeTableModule,
+    RadioButtonModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [

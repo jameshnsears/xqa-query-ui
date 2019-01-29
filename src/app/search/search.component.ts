@@ -13,20 +13,21 @@ export class SearchComponent implements OnInit {
   searchResponses: SearchResponse[];
   error: string;
 
-  model = { options: '2' };
+  searchSpace: string = 'Option 1';
 
   constructor(private searchService: SearchService) {
     this.searchValue = '';
   }
 
   search() {
-    this.error = '';
-    this.searchService.doSearch(this.searchValue)
-      .subscribe(
-        searchResponses => this.searchResponses = searchResponses,
-        error => this.error = error
-      );
+    // this.error = '';
+    // this.searchService.doSearch(this.searchValue)
+    //   .subscribe(
+    //     searchResponses => this.searchResponses = searchResponses,
+    //     error => this.error = error
+    //   );
   }
+
 
   ngOnInit() {
   }

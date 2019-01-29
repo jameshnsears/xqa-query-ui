@@ -1,18 +1,20 @@
+<p>&nbsp;</p>
+
 <input type="text" size="40" pInputText placeholder="Search..." [(ngModel)]="searchValue">
 &nbsp;
 
-<input type="radio" name="options" [(ngModel)]="model.options" value="1">
-my one
-<input type="radio" name="options" [(ngModel)]="model.options" value="2">
-my two
-<input type="radio" name="options" [(ngModel)]="model.options" value="3">
-my three
-
+<p-radioButton name="search" value="Option 1" label="Filename" [(ngModel)]="searchSpace" inputId="preopt1"></p-radioButton>
+&nbsp;
+<p-radioButton name="search" value="Option 2" label="Digest" [(ngModel)]="searchSpace" inputId="preopt2"></p-radioButton>
+&nbsp;
+<p-radioButton name="search" value="Option 3" label="Service" [(ngModel)]="searchSpace" inputId="preopt3"></p-radioButton>
+&nbsp;
 <button type="button" (click)="search()" pButton label="Search"></button>
+&nbsp;
+{{error}}
 
-{{error}} 
 
-<p></p>
+<p>&nbsp;</p>
 
 <p-table [value]="searchResponses" [paginator]="true" [rows]="10">
   <ng-template pTemplate="header">

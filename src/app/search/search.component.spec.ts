@@ -27,9 +27,9 @@ describe('SearchComponent', () => {
         FormsModule,
         TabViewModule,
         InputTextModule,
+        RadioButtonModule,
         ButtonModule,
         TableModule,
-        RadioButtonModule,
         HttpClientModule
       ],
       providers: [SearchService]
