@@ -44,8 +44,8 @@ describe('XQueryComponent', () => {
   });
 
   it('clear pressed', () => {
-    component.materialisedResponse = '1';
     component.clear();
+    expect(component.xquery).toEqual('count(/)');
     expect(component.materialisedResponse).toEqual('');
   });
 });
