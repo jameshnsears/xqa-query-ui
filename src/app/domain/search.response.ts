@@ -1,7 +1,6 @@
 export interface SearchResponse {
     creationTime?;
-    service?;
+    serviceId?;
     subject?;
-    correlationId?;
     digest?;
 }

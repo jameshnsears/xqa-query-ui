@@ -19,7 +19,10 @@ export class XQueryService extends CommonService {
 
   doRun(xquery: string): Observable<string> {
     const url = `${environment.endpointHost}:${environment.endpointPort}/${environment.endpointXQuery}`;
+    console.log(url);
+
     let json = { xqueryRequest: xquery };
+    console.log(json);
 
     return this.http.post<string>(url, json, httpOptions)
       .pipe(

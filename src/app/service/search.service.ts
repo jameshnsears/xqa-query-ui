@@ -12,10 +12,11 @@ export class SearchService extends CommonService {
     super();
   }
 
-  doSearch(searchValue: string): Observable<SearchResponse[]> {
-    const url = `${environment.endpointHost}:${environment.endpointPort}/${environment.endpointSearch}/${searchValue}`;
+  doSearch(searchSpace: string, searchValue: string): Observable<SearchResponse[]> {
+    const url = `${environment.endpointHost}:${environment.endpointPort}/${environment.endpointSearch}/${searchSpace}/${searchValue}`;
+    console.log(url);
 
-    return this.http.get<SearchResponse[]>(url)
+    return this.http.get<SearchResponse[]>(url) 
     .pipe(
       retry(3),
       catchError(this.handleError)

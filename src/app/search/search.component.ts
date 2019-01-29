@@ -10,24 +10,43 @@ import { SearchService } from '../service/search.service';
 })
 export class SearchComponent implements OnInit {
   searchValue: string;
-  searchResponses: SearchResponse[];
+  searchSpace: string = 'filename';
+  ie: string = '/xml/DBER-1923-0416.xml';
   error: string;
-
-  searchSpace: string = 'Option 1';
+  searchResponses: SearchResponse[];
 
   constructor(private searchService: SearchService) {
     this.searchValue = '';
   }
 
   search() {
-    // this.error = '';
-    // this.searchService.doSearch(this.searchValue)
-    //   .subscribe(
-    //     searchResponses => this.searchResponses = searchResponses,
-    //     error => this.error = error
-    //   );
+    console.log(this.searchSpace);
+    this.error = '';
+    this.searchResponses = [];
+    this.searchService.doSearch(this.searchSpace, this.searchValue)
+      .subscribe(
+        searchResponses => this.searchResponses = searchResponses['searchResponse'],
+        error => this.error = error
+      );
   }
 
+  radioClick() {
+    switch(this.searchSpace) { 
+      case 'filename': { 
+        this.ie = '/xml/DBER-1923-0416.xml'; 
+         break; 
+      } 
+      case 'digest': { 
+        this.ie = 'aa84010'; 
+         break; 
+      } 
+      case 'service': { 
+        this.ie = 'ingest/25601c39'; 
+         break; 
+      } 
+   }
+
+  }
 
   ngOnInit() {
   }
