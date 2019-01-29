@@ -30,7 +30,7 @@ describe('SearchComponent', () => {
         RadioButtonModule,
         ButtonModule,
         TableModule,
-        HttpClientModule
+        HttpClientModule,
       ],
       providers: [SearchService]
     })
@@ -45,5 +45,27 @@ describe('SearchComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should say /xml/DBER-1923-0416.xml on startup', () => {
+    expect(component.ie).toEqual('/xml/DBER-1923-0416.xml');
+  });
+
+  it('should say /xml/DBER-1923-0416.xml on filename radio', () => {
+    component.searchSpace = 'filename';
+    component.radioClick();
+    expect(component.ie).toEqual('/xml/DBER-1923-0416.xml');
+  });
+
+  it('should say aa84010l on digest radio', () => {
+    component.searchSpace = 'digest';
+    component.radioClick();
+    expect(component.ie).toEqual('aa84010');
+  });
+
+  it('should say ingest/25601c39 on service radio', () => {
+    component.searchSpace = 'service';
+    component.radioClick();
+    expect(component.ie).toEqual('ingest/25601c39');
   });
 });

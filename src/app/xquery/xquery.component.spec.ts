@@ -42,4 +42,10 @@ describe('XQueryComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('clear pressed', () => {
+    component.materialisedResponse = '1';
+    component.clear();
+    expect(component.materialisedResponse).toEqual('');
+  });
 });
