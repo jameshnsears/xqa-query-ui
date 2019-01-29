@@ -51,7 +51,9 @@ or
 * node_modules/@angular/cli/bin/ng serve --open --env=prod
 
 ### 6.1. Testing the .spec.ts files
-* node_modules/@angular/cli/bin/ng test --watch=false
+* node_modules/@angular/cli/bin/ng test --code-coverage --watch false
+
+* visit: xqa-query-ui/coverage/index.html
 
 ### 6.1. Debug in VSC
 * Debugger for Chrome extension installed.

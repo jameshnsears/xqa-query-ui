@@ -3,4 +3,5 @@ coverage
 dist
 node_modules
 reports/**
+reports/chrome.*.xml
 test-report.xml
