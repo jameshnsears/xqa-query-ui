@@ -1,21 +1,31 @@
+(optional) "kubectl --namespace=xqa get svc xqa-query-balancer": <input type="text" size="16" pInputText
+  placeholder="CLUSTER-IP..." [(ngModel)]="k8sIP">
+&nbsp;
+
 <p>&nbsp;</p>
 
 <input type="text" size="40" pInputText placeholder="Search..." [(ngModel)]="searchValue">
 &nbsp;
 
-<p-radioButton name="search" value="filename" label="Filename" [(ngModel)]="searchSpace" inputId="filename" (click)="radioClick()"></p-radioButton>
+<p-radioButton name="search" value="filename" label="Filename" [(ngModel)]="searchSpace" inputId="filename"
+  (click)="radioClick()"></p-radioButton>
 &nbsp;
-<p-radioButton name="search" value="digest" label="Digest" [(ngModel)]="searchSpace" inputId="digest" (click)="radioClick()"></p-radioButton>
+<p-radioButton name="search" value="digest" label="Digest" [(ngModel)]="searchSpace" inputId="digest"
+  (click)="radioClick()"></p-radioButton>
 &nbsp;
-<p-radioButton name="search" value="service" label="Service" [(ngModel)]="searchSpace" inputId="service" (click)="radioClick()"></p-radioButton>
+<p-radioButton name="search" value="service" label="Service" [(ngModel)]="searchSpace" inputId="service"
+  (click)="radioClick()"></p-radioButton>
 &nbsp;
 <button type="button" (click)="search()" pButton label="Search"></button>
-&nbsp;
-{{error}}
 
 <p>&nbsp;</p>
 i.e. {{ ie }}
 <p>&nbsp;</p>
+
+<div *ngIf="error">
+  {{error}}
+  <p>&nbsp;</p>
+</div>
 
 <p-table [value]="searchResponses" [paginator]="true" [rows]="15">
   <ng-template pTemplate="header">

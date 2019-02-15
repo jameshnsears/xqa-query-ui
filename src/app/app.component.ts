@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import { SearchComponent } from './search/search.component';
-import { XQueryComponent } from './xquery/xquery.component';
-import { TabViewModule } from 'primeng/primeng';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +6,4 @@ import { TabViewModule } from 'primeng/primeng';
 })
 export class AppComponent {
   title = 'XQA';
-  k8sIP = '';
 }

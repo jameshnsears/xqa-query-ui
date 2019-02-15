@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { SearchResponse } from '../domain/search.response';
 import { SearchService } from '../service/search.service';
-import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-search',
@@ -10,13 +9,14 @@ import { AppComponent } from '../app.component';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+  k8sIP = '';
   searchValue: string;
   searchSpace = 'filename';
   ie = '/xml/DBER-1923-0416.xml';
   error: string;
   searchResponses: SearchResponse[];
 
-  constructor(private searchService: SearchService, public appComponent: AppComponent) {
+  constructor(private searchService: SearchService) {
     this.searchValue = '';
   }
 
@@ -24,7 +24,7 @@ export class SearchComponent implements OnInit {
     console.log(this.searchSpace);
     this.error = '';
     this.searchResponses = [];
-    this.searchService.doSearch(this.searchSpace, this.searchValue, this.appComponent.k8sIP)
+    this.searchService.doSearch(this.searchSpace, this.searchValue, this.k8sIP)
       .subscribe(
         searchResponses => this.searchResponses = searchResponses['searchResponse'],
         error => this.error = error
