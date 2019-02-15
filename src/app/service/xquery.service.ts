@@ -18,8 +18,8 @@ export class XQueryService extends CommonService {
   }
 
   doRun(xquery: string, k8sIP: string): Observable<string> {
-    var url;
-    if (k8sIP != "") {
+    let url;
+    if (k8sIP !== '') {
       url = `http://${k8sIP}:${environment.endpointPort}/${environment.endpointXQuery}`;
     } else {
       url = `${environment.endpointHost}:${environment.endpointPort}/${environment.endpointXQuery}`;

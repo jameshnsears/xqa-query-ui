@@ -13,8 +13,8 @@ export class SearchService extends CommonService {
   }
 
   doSearch(searchSpace: string, searchValue: string, k8sIP: string): Observable<SearchResponse[]> {
-    var url;
-    if (k8sIP != "") {
+    let url;
+    if (k8sIP !== '') {
       url = `http://${k8sIP}:${environment.endpointPort}/${environment.endpointSearch}/${searchSpace}/${searchValue}`;
     } else {
       url = url = `${environment.endpointHost}:${environment.endpointPort}/${environment.endpointSearch}/${searchSpace}/${searchValue}`;
