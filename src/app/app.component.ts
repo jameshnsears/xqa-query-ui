@@ -9,4 +9,5 @@ import { TabViewModule } from 'primeng/primeng';
 })
 export class AppComponent {
   title = 'XQA';
+  k8sIP = '';
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { SearchResponse } from '../domain/search.response';
 import { SearchService } from '../service/search.service';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-search',
@@ -15,7 +16,7 @@ export class SearchComponent implements OnInit {
   error: string;
   searchResponses: SearchResponse[];
 
-  constructor(private searchService: SearchService) {
+  constructor(private searchService: SearchService, public appComponent: AppComponent) {
     this.searchValue = '';
   }
 
@@ -23,7 +24,7 @@ export class SearchComponent implements OnInit {
     console.log(this.searchSpace);
     this.error = '';
     this.searchResponses = [];
-    this.searchService.doSearch(this.searchSpace, this.searchValue)
+    this.searchService.doSearch(this.searchSpace, this.searchValue, this.appComponent.k8sIP)
       .subscribe(
         searchResponses => this.searchResponses = searchResponses['searchResponse'],
         error => this.error = error

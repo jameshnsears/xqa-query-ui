@@ -12,8 +12,13 @@ export class SearchService extends CommonService {
     super();
   }
 
-  doSearch(searchSpace: string, searchValue: string): Observable<SearchResponse[]> {
-    const url = `${environment.endpointHost}:${environment.endpointPort}/${environment.endpointSearch}/${searchSpace}/${searchValue}`;
+  doSearch(searchSpace: string, searchValue: string, k8sIP: string): Observable<SearchResponse[]> {
+    var url;
+    if (k8sIP != "") {
+      url = `http://${k8sIP}:${environment.endpointPort}/${environment.endpointSearch}/${searchSpace}/${searchValue}`;
+    } else {
+      url = url = `${environment.endpointHost}:${environment.endpointPort}/${environment.endpointSearch}/${searchSpace}/${searchValue}`;
+    }
     console.log(url);
 
     return this.http.get<SearchResponse[]>(url)
